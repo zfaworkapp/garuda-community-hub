@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --max-width: 1200px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: theme("colors.ink");
+    background: #fcfaf7;
+    -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+    .container-x {
+        @apply mx-auto w-full max-w-screen-2xl px-5 md:px-8 xl:px-12;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-md bg-garuda-red px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-garuda-dark hover:shadow-card-hover;
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-md border border-garuda-red px-6 py-3.5 text-sm font-semibold text-garuda-red transition-all hover:bg-garuda-red hover:text-white;
+    }
+
+    .section-eyebrow {
+        @apply text-xs font-bold uppercase tracking-[0.2em] text-garuda-red;
+    }
+
+    .heading {
+        @apply font-display font-extrabold uppercase leading-[0.95] tracking-tight text-ink;
+    }
+}
+
+/* Hide scrollbar for horizontal scroll rows on mobile */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
