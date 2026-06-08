@@ -92,7 +92,7 @@ export const communities = [
 export const events = [
   {
     category: "MATCHDAY",
-    title: "INDONESIA VS ZIMBABWE",
+    title: "INDONESIA VS MOZAMBIK",
     date: "Selasa, 9 Juni 2026",
     time: "19.00 WIB",
     place: "Gelora Bung Karno, Jakarta",
