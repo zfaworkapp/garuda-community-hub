@@ -11,9 +11,47 @@ import JoinForm from "@/components/JoinForm";
 import Footer from "@/components/Footer";
 import { MotifDivider } from "@/components/Motif";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Garuda Community Hub",
+  alternateName: "GCH",
+  url: "https://garudacommunityhub.id",
+  logo: "https://priority.co.id/wp-content/uploads/2026/06/logo-garuda-community-hub.png",
+  description:
+    "Rumah kolaborasi komunitas sepak bola Indonesia. Menghubungkan komunitas, suporter, keluarga, dan pecinta sepak bola untuk mendukung Garuda dan memajukan sepak bola nasional.",
+  foundingDate: "2026",
+  areaServed: {
+    "@type": "Country",
+    name: "Indonesia",
+  },
+  knowsAbout: [
+    "Sepak Bola Indonesia",
+    "Komunitas Suporter",
+    "Timnas Indonesia",
+    "Nonton Bareng",
+    "Matchday Experience",
+  ],
+  sameAs: [
+    "https://www.instagram.com/garudacommunityhub",
+    "https://www.youtube.com/@garudacommunityhub",
+    "https://x.com/garudacommunity",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "partnership",
+    email: "partnership@garudacommunityhub.id",
+    availableLanguage: ["Indonesian", "English"],
+  },
+};
+
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <Hero />
       <MotifDivider />
