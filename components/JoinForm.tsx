@@ -4,41 +4,57 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { cities } from "@/lib/data";
 
+function validateEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function sanitize(input: string, max: number): string {
+  return input.trim().slice(0, max);
+}
+
 export default function JoinForm() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     fullName: "",
     whatsapp: "",
     email: "",
     city: "",
     communityName: "",
-    company: "", // honeypot anti-spam
+    company: "",
   });
 
   const update = (k: keyof typeof form, v: string) =>
     setForm((f) => ({ ...f, [k]: v }));
 
   async function handleSubmit() {
-    if (form.company) return; // bot terdeteksi
-    if (!form.fullName || !form.whatsapp || !form.email) {
-      alert("Mohon lengkapi Nama, WhatsApp, dan Email.");
+    setError("");
+
+    if (form.company) return;
+
+    const name = sanitize(form.fullName, 100);
+    const wa = sanitize(form.whatsapp, 20);
+    const mail = sanitize(form.email, 254);
+
+    if (!name) {
+      setError("Mohon isi Nama Lengkap.");
       return;
     }
+    if (!wa) {
+      setError("Mohon isi nomor WhatsApp.");
+      return;
+    }
+    if (!mail || !validateEmail(mail)) {
+      setError("Mohon isi Email dengan format yang benar.");
+      return;
+    }
+
     setLoading(true);
 
     // ====== INTEGRASI SUPABASE (Fase 2) ======
-    // import { createClient } from "@supabase/supabase-js";
-    // const supabase = createClient(URL, ANON_KEY);
-    // await supabase.from("registrations").insert({
-    //   full_name: form.fullName,
-    //   whatsapp: form.whatsapp,
-    //   email: form.email,
-    //   city: form.city,
-    //   community_name: form.communityName || null,
-    //   source: form.communityName ? "register_community" : "join",
-    // });
-    await new Promise((r) => setTimeout(r, 700)); // simulasi
+    // Gunakan Server Action, jangan hardcode key
+    await new Promise((r) => setTimeout(r, 700));
     // ==========================================
 
     setLoading(false);
@@ -50,7 +66,6 @@ export default function JoinForm() {
       id="join"
       className="relative overflow-hidden bg-[#FFF8F3] py-16 lg:py-20"
     >
-      {/* dekorasi */}
       <div className="pointer-events-none absolute -left-10 top-6 h-40 w-40 rounded-full bg-garuda-gold/10 blur-2xl" />
       <div className="pointer-events-none absolute -right-10 bottom-6 h-48 w-48 rounded-full bg-garuda-red/10 blur-2xl" />
 
@@ -85,12 +100,14 @@ export default function JoinForm() {
                 className="input"
                 placeholder="Nama Lengkap"
                 value={form.fullName}
+                maxLength={100}
                 onChange={(e) => update("fullName", e.target.value)}
               />
               <input
                 className="input"
                 placeholder="WhatsApp"
                 value={form.whatsapp}
+                maxLength={20}
                 onChange={(e) => update("whatsapp", e.target.value)}
               />
               <input
@@ -98,6 +115,7 @@ export default function JoinForm() {
                 type="email"
                 placeholder="Email"
                 value={form.email}
+                maxLength={254}
                 onChange={(e) => update("email", e.target.value)}
               />
               <select
@@ -116,17 +134,31 @@ export default function JoinForm() {
                 className="input sm:col-span-2"
                 placeholder="Nama Komunitas (Jika Ada)"
                 value={form.communityName}
+                maxLength={100}
                 onChange={(e) => update("communityName", e.target.value)}
               />
-              {/* honeypot tersembunyi */}
-              <input
-                tabIndex={-1}
-                autoComplete="off"
-                className="hidden"
-                value={form.company}
-                onChange={(e) => update("company", e.target.value)}
-              />
+              <div
+                aria-hidden="true"
+                className="absolute opacity-0 pointer-events-none"
+              >
+                <input
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.company}
+                  onChange={(e) => update("company", e.target.value)}
+                />
+              </div>
             </div>
+
+            {error && (
+              <p
+                className="mt-3 text-sm font-medium text-garuda-red"
+                role="alert"
+              >
+                {error}
+              </p>
+            )}
+
             <button
               onClick={handleSubmit}
               disabled={loading}
