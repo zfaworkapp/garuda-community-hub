@@ -17,7 +17,7 @@ const jsonLd = {
   name: "Garuda Community Hub",
   alternateName: "GCH",
   url: "https://garudacommunityhub.id",
-  logo: "https://priority.co.id/wp-content/uploads/2026/06/logo-garuda-community-hub.png",
+  logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/logo%20garuda%20hub%20community%20circle.png",
   description:
     "Rumah kolaborasi komunitas sepak bola Indonesia. Menghubungkan komunitas, suporter, keluarga, dan pecinta sepak bola untuk mendukung Garuda dan memajukan sepak bola nasional.",
   foundingDate: "2026",

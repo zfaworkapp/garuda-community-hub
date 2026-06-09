@@ -9,6 +9,10 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "jqkrxekvjidbbvuuidyj.supabase.co",
+      },
+      {
+        protocol: "https",
         hostname: "superlatif.id",
       },
     ],

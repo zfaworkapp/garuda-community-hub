@@ -53,9 +53,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "https://priority.co.id/wp-content/uploads/2026/06/logo-garuda-community-hub.png",
+    icon: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/logo%20garuda%20hub%20community%20circle.png",
     apple:
-      "https://priority.co.id/wp-content/uploads/2026/06/logo-garuda-community-hub.png",
+      "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/logo%20garuda%20hub%20community%20circle.png",
   },
   openGraph: {
     siteName: "Garuda Community Hub",
