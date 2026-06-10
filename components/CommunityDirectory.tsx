@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { communities } from "@/lib/data";
-import { CommunityBadge } from "./CommunityBadge";
 
 export default function CommunityDirectory() {
   return (
@@ -22,7 +22,13 @@ export default function CommunityDirectory() {
               key={c.name}
               className="flex flex-col items-center rounded-xl border border-gray-100 bg-cream px-2 py-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-card-hover"
             >
-              <CommunityBadge name={c.name} />
+              <Image
+                src={c.logo}
+                alt={c.name}
+                width={64}
+                height={64}
+                className="h-16 w-16 object-contain"
+              />
               <p className="mt-3 text-center text-[11px] font-bold uppercase leading-tight text-ink">
                 {c.name}
               </p>

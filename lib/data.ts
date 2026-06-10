@@ -81,12 +81,36 @@ export const programs: { icon: LucideIcon; title: string; desc: string }[] = [
 ];
 
 export const communities = [
-  { name: "GARUDA FATMAWATI", city: "Jakarta" },
-  { name: "GARUDA PRIORITY", city: "Jakarta" },
-  { name: "GARUDA BEKASI", city: "Bekasi" },
-  { name: "GARUDA TANGERANG", city: "Tangerang" },
-  { name: "GARUDA DEPOK", city: "Depok" },
-  { name: "GARUDA BANDUNG", city: "Bandung" },
+  {
+    name: "ATAS 30 FC",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Atas%20Tiga%20Puluh.png",
+  },
+  {
+    name: "IKHWAN TANGSEL FC",
+    city: "Tangerang Selatan",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Ikhwan%20Tangsel%20FC.png",
+  },
+  {
+    name: "ILUNI UI SOCCER COMMUNITY",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Iluni%20UI%20Soccer%20Community.png",
+  },
+  {
+    name: "KOMUNITAS AYAH SALIM",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Komunitas%20Ayah%20Salim.png",
+  },
+  {
+    name: "PUSKESMAS KEC. PANCORAN FC",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Puskesmas%20Kec%20Pancoran%20FC.png",
+  },
+  {
+    name: "VAR PEOPLE",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Var%20People.png",
+  },
 ];
 
 export const events = [
