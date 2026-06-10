@@ -87,6 +87,36 @@ export const communities = [
     logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Atas%20Tiga%20Puluh.png",
   },
   {
+    name: "GARUDA BLOK S",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Garuda%20Blok%20S.png",
+  },
+  {
+    name: "GARUDA JAGAKARSA",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Garuda%20Jagakarsa.png",
+  },
+  {
+    name: "GARUDA KALIBATA",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Garuda%20Kalibata.png",
+  },
+  {
+    name: "GARUDA MAYESTIK",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Garuda%20Mayestik.png",
+  },
+  {
+    name: "GARUDA PRIORITY",
+    city: "Jakarta",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Garuda%20Priority.png",
+  },
+  {
+    name: "GARUDA SERPONG X HOMEBAY",
+    city: "Tangerang Selatan",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Garuda%20Serpong%20x%20Homebay.png",
+  },
+  {
     name: "IKHWAN TANGSEL FC",
     city: "Tangerang Selatan",
     logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Ikhwan%20Tangsel%20FC.png",
@@ -105,6 +135,11 @@ export const communities = [
     name: "PUSKESMAS KEC. PANCORAN FC",
     city: "Jakarta",
     logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/Puskesmas%20Kec%20Pancoran%20FC.png",
+  },
+  {
+    name: "SCS TANGERANG RAYA",
+    city: "Tangerang",
+    logo: "https://jqkrxekvjidbbvuuidyj.supabase.co/storage/v1/object/public/asset/SCS%20Tangerang%20Raya.png",
   },
   {
     name: "VAR PEOPLE",
